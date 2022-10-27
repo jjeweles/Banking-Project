@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.Scanner;
 
 public class Account {
@@ -42,9 +41,9 @@ public class Account {
 
     // Calculate Interest Accrued Over The Years
     void calInterest(int years) {
-        double interestRate = 0.0185;
+        double interestRate = 0.0185 * 100;
         double newBalance = (balance * interestRate * years) + balance;
-        System.out.println("Currently interest rates are " + (100 * interestRate));
+        System.out.println("Currently interest rates are " + (String.format("%.2f", interestRate)) + "%");
         System.out.println("In " + years + " years, your balance with interest " +
                 "will be: " + newBalance);
     }
@@ -53,15 +52,19 @@ public class Account {
     void displayMenu() {
         char option = '\0';
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome, " + accountName);
-        System.out.println("Your account ID is: " + accountID + "\n");
-        System.out.println("Please select an option:");
-        System.out.println("1. Check Balance");
-        System.out.println("2. Deposit Money");
-        System.out.println("3. Withdraw Money");
-        System.out.println("4. View Last Transaction");
-        System.out.println("5. Calculate Interest");
-        System.out.println("6. Exit Menu");
+        System.out.println("+-----------------------------------+");
+        System.out.println("|       Welcome, " + accountName + "      |");
+        System.out.println("+-----------------------------------+");
+        System.out.println("|     Your account ID is: " + accountID + "     |");
+        System.out.println("+-----------------------------------+");
+        System.out.println("|   Please select an option:        |");
+        System.out.println("|   1. Check Balance                |");
+        System.out.println("|   2. Deposit Money                |");
+        System.out.println("|   3. Withdraw Money               |");
+        System.out.println("|   4. View Last Transaction        |");
+        System.out.println("|   5. Calculate Interest           |");
+        System.out.println("|   6. Exit Menu                    |");
+        System.out.println("+-----------------------------------+");
 
         do {
             System.out.println();
